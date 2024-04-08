@@ -1,20 +1,29 @@
 import React from 'react';
 import {Text, View} from 'react-native';
-import TrackPlayer from 'react-native-track-player';
+import TrackPlayer, {Capability} from 'react-native-track-player';
 
 function App() {
   React.useEffect(() => {
     const init = async () => {
-      await TrackPlayer.setupPlayer();
-      // await TrackPlayer.add({
-      //   url: 'https://open.spotify.com/embed/playlist/13IGjCsNoySchlHk1FyqLL',
-      //   title: 'Coelacanth I',
-      //   artist: 'deadmau5',
-      //   artwork: '',
-      //   duration: 166,
-      // });
-
-      TrackPlayer.play();
+      await TrackPlayer.setupPlayer({
+        waitForBuffer: true,
+      });
+      await TrackPlayer.updateOptions({
+        capabilities: [
+          Capability.Play,
+          Capability.Pause,
+          Capability.Stop,
+          Capability.SkipToNext,
+          Capability.SkipToPrevious,
+        ],
+      });
+      await TrackPlayer.add([
+        {
+          url: 'https://aac.saavncdn.com/273/162c51cc9d8e7baca25ec6a8aec2dedd_12.mp4',
+        },
+      ]);
+      await TrackPlayer.play();
+      await TrackPlayer.seekTo(80);
     };
 
     init();
