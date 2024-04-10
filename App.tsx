@@ -31,12 +31,16 @@ function App() {
 
   return (
     <View className="flex flex-1 bg-[#000] text-black">
-      <Text className="text-orange-500">Hey</Text>
-      <Text>Hey</Text>
-      <Text>Hey</Text>
-      <Text>Hey</Text>
+      {/* App Container with stacked cards */}
     </View>
   );
 }
+
+/**
+ * 1. Create an audio player
+ * 2. Create Swipeable card with Audio player
+ * 3. Persist the swipes in liked and archived
+ * 4. Requests implementation from saaavncdn
+ */
 
 export default App;
