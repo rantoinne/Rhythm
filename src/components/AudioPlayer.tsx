@@ -56,7 +56,6 @@ const MusicPlayer = () => {
     console.log('called')
     if (event.type === Event.PlaybackProgressUpdated) {
       const currentPosition = await TrackPlayer.getProgress();
-      console.log({ currentPosition });
       setPosition(currentPosition.position);
     } else if (event.type === Event.PlaybackActiveTrackChanged) {
       const trackDuration = await TrackPlayer.getProgress();
@@ -65,8 +64,8 @@ const MusicPlayer = () => {
   });
 
   const togglePlayback = async () => {
-    const currentState = await TrackPlayer.getPlaybackState();
-    if (currentState.state === 'paused' || currentState.state === 'stopped') {
+    const state = await TrackPlayer.getPlaybackState();
+    if (state.state === 'paused' || state.state === 'stopped') {
       await TrackPlayer.play();
       setCurrentState('playing');
     } else {
