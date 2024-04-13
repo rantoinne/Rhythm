@@ -53,7 +53,6 @@ const MusicPlayer = () => {
   }, []);
 
   useTrackPlayerEvents(events, async event => {
-    console.log('called')
     if (event.type === Event.PlaybackProgressUpdated) {
       const currentPosition = await TrackPlayer.getProgress();
       setPosition(currentPosition.position);

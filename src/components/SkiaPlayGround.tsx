@@ -1,6 +1,6 @@
 import React from 'react';
 import {Canvas, Circle, Group} from '@shopify/react-native-skia';
-import { useWindowDimensions } from 'react-native';
+import {useWindowDimensions} from 'react-native';
 
 const SkiaPlayGround = () => {
   const {width, height} = useWindowDimensions();
