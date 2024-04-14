@@ -11,6 +11,7 @@ const events = [
   Event.PlaybackState,
   Event.PlaybackActiveTrackChanged,
   Event.PlaybackProgressUpdated,
+  Event.PlaybackError,
 ];
 
 const MusicPlayer = () => {
