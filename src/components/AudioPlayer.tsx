@@ -5,6 +5,7 @@ import TrackPlayer, {
   Event,
   Capability,
 } from 'react-native-track-player';
+
 import Slider from '@react-native-community/slider';
 
 const events = [
